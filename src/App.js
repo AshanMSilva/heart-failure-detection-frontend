@@ -1,25 +1,67 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import Header from "./components/Navbar";
+import Footer from "./components/Footer";
+import Hero from "./components/Hero";
+import Prediction from "./pages/Prediction";
+import Home from "./pages/Home";
+import banner from "./assets/images/banner.jpg";
 
-function App() {
+function Layout({ children }) {
+  const location = useLocation();
+
+  const heroConfig = {
+    "/": {
+      title: "ECG Heart Failure Prediction",
+      subtitle: "AI-assisted decision support for clinicians",
+      image: banner,
+    },
+    "/prediction": {
+      title: "Prediction Results",
+      subtitle: "Patient ECG analysis and outcome",
+      image: banner,
+    },
+  };
+
+  const { title, subtitle, image } =
+    heroConfig[location.pathname] || heroConfig["/"];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="d-flex flex-column min-vh-100">
+      <Header />
+      <Hero title={title} subtitle={subtitle} image={image} />
+      <main className="flex-grow-1 p-4">{children}</main>
+      <Footer />
     </div>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Layout>
+              <Home />
+            </Layout>
+          }
+        />
+        <Route
+          path="/prediction"
+          element={
+            <Layout>
+              <Prediction />
+            </Layout>
+          }
+        />
+      </Routes>
+    </Router>
+  );
+}

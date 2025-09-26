@@ -1,0 +1,40 @@
+.fit-image {
+    height: 100%;
+    width: 100%;        /* Responsive width */
+    object-fit: contain; /* Keeps proportions */
+}
+
+.fit-image-50 {
+    height: 50%;
+    width: 100%;        /* Responsive width */
+    object-fit: contain; /* Keeps proportions */
+}
+
+.prediction-button {
+    color: #fee9e7 !important;
+    background-color: #ec221f !important;
+    border-color: #c00f0c !important;
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+}
+
+.architecture-image {
+    height: 100%;
+    width: 100%;        /* Responsive width */
+    object-fit: contain
+   
+}
+.prediction-button-navbar {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+.navbar-logo {
+    width: 50px;
+}
+.navbar-container {
+    padding-left: 0px !important;
+}
+.image-width {
+    width: 100% !important;
+}
