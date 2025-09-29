@@ -2,8 +2,15 @@ import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import piechart from "../assets/images/piechart.png";
 import heartrate from "../assets/images/heartrate.jpg";
 import ecg_detailed from "../assets/images/ecg_detailed.jpg";
+import { useState } from "react";
+import PredictionForm from "./PredictionForm";
 
 export default function OurWork() {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleOpen = () => setShowModal(true);
+  const handleClose = () => setShowModal(false);
+
   return (
     <Container className="mt-3 mb-3">
       <Row>
@@ -43,11 +50,12 @@ export default function OurWork() {
       </Row>
       <Row>
         <Col md={{ span: 6, offset: 3 }} className="text-center mt-3">
-          <Button className="prediction-button">
+          <Button className="prediction-button" onClick={handleOpen}>
             Get your prediction here
           </Button>
         </Col>
       </Row>
+      <PredictionForm show={showModal} onHide={handleClose} />
     </Container>
   );
 }

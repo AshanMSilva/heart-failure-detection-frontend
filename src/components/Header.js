@@ -1,8 +1,15 @@
 import { Navbar, Nav, Container, Button, Image } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import logo from "../assets/images/logo.jpg";
+import PredictionForm from "./PredictionForm";
+import { useState } from "react";
 
 export default function Header() {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleOpen = () => setShowModal(true);
+  const handleClose = () => setShowModal(false);
+
   return (
     <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
       <Container className="navbar-container">
@@ -13,16 +20,17 @@ export default function Header() {
         <Navbar.Collapse id="main-navbar">
           <Nav className="m-auto">
             <LinkContainer to="/">
-              <Nav.Link>Our Work</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/prediction">
-              <Nav.Link>Prediction</Nav.Link>
+              <Nav.Link>Home</Nav.Link>
             </LinkContainer>
           </Nav>
-          <Button className="prediction-button prediction-button-navbar">
+          <Button
+            className="prediction-button prediction-button-navbar"
+            onClick={handleOpen}
+          >
             Get your prediction here
           </Button>
         </Navbar.Collapse>
+        <PredictionForm show={showModal} onHide={handleClose} />
       </Container>
     </Navbar>
   );

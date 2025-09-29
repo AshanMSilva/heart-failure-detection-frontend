@@ -8,20 +8,23 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { Form } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
 
 export default function ECGPlot() {
-  const [lead, setLead] = useState("Lead I");
+  const { result } = useSelector((state) => state.prediction);
+  const [lead, setLead] = useState(result.sig_names[1]);
 
-  const leads = {
-    "Lead I": Array.from({ length: 100 }, (_, i) => ({
-      x: i,
-      y: Math.sin(i / 10),
-    })),
-    "Lead II": Array.from({ length: 100 }, (_, i) => ({
-      x: i,
-      y: Math.cos(i / 10),
-    })),
-  };
+  var leads = {};
+  for (let i = 0; i < result.sig_names.length; i++) {
+    let lead_name = result.sig_names[i];
+    let lead_values = [];
+    for (let j = 0; j < result.preprocessed_signals.length; j++) {
+      lead_values.push({ x: j, y: result.preprocessed_signals[j][i] });
+    }
+    leads[lead_name] = lead_values;
+  }
+  console.log(leads);
 
   return (
     <div className="mt-4">
@@ -38,9 +41,8 @@ export default function ECGPlot() {
       <div style={{ width: "100%", height: 250 }}>
         <ResponsiveContainer>
           <LineChart data={leads[lead]}>
-            <XAxis dataKey="x" />
-            <YAxis />
-            <Tooltip />
+            <XAxis tick={false} dataKey="x" />
+            <YAxis tick={false} />
             <Line type="monotone" dataKey="y" stroke="#dc3545" dot={false} />
           </LineChart>
         </ResponsiveContainer>
