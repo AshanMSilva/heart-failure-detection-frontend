@@ -22,6 +22,9 @@ export default function Header() {
             <LinkContainer to="/">
               <Nav.Link>Home</Nav.Link>
             </LinkContainer>
+            <LinkContainer to="/about">
+              <Nav.Link>About Us</Nav.Link>
+            </LinkContainer>
           </Nav>
           <Button
             className="prediction-button prediction-button-navbar"

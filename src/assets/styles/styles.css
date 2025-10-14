@@ -38,3 +38,11 @@
 .image-width {
     width: 100% !important;
 }
+
+.contactus-button {
+    color: #fee9e7 !important;
+    background-color: #ec221f !important;
+    border-color: #c00f0c !important;
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+}

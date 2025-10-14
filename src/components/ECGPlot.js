@@ -1,15 +1,7 @@
 import { useState } from "react";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
+import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from "recharts";
 import { Form } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
 
 export default function ECGPlot() {
   const { result } = useSelector((state) => state.prediction);
@@ -24,10 +16,10 @@ export default function ECGPlot() {
     }
     leads[lead_name] = lead_values;
   }
-  console.log(leads);
 
   return (
     <div className="mt-4">
+      <h5 className="mt-4">ECG Signals</h5>
       <Form.Select
         value={lead}
         onChange={(e) => setLead(e.target.value)}

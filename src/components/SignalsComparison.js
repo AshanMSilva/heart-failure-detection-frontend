@@ -7,16 +7,34 @@ export default function SignalsComparison() {
     <Container className="mt-3 mb-3">
       <Row>
         <Col sm={12}>
-          <h3>Signal Preprocessing</h3>
+          <h3>⚙️ Signal Preprocessing</h3>
           <p>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using 'Content here, content
-            here', making it look like readable English. Many desktop publishing
-            packages and web page editors now use Lorem Ipsum as their default
-            model text, and a search for 'lorem ipsum' will uncover many web
-            sites still in their infancy.
+            Before training, all ECG signals from the PTB-XL dataset were
+            carefully cleaned and standardized to improve model accuracy. The
+            preprocessing pipeline included:
+          </p>
+          <ul>
+            <li>
+              <strong>High-pass filtering</strong> with a 0.5 Hz Butterworth
+              filter to remove baseline wander and low-frequency noise.
+            </li>
+            <li>
+              <strong>Z-score normalization</strong> to standardize signal
+              amplitude across all leads.
+            </li>
+            <li>
+              <strong>Diagnostic label grouping</strong> into five clinically
+              meaningful superclasses: Normal (NORM), Myocardial Infarction
+              (MI), Hypertrophy (HYP), ST/T Changes (STTC), and Conduction
+              Disturbances (CD).
+            </li>
+          </ul>
+          <p>
+            After preprocessing, the dataset contained{" "}
+            <strong>15,107 ECG samples</strong> (9,083 normal and 6,024
+            abnormal). The resulting signals displayed smoother baselines and
+            clearer R-peaks, confirming successful noise removal and signal
+            enhancement for model training.
           </p>
         </Col>
         <Col sm={12}>

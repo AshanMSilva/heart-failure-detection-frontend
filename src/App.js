@@ -11,6 +11,7 @@ import Hero from "./components/Hero";
 import Prediction from "./pages/Prediction";
 import Home from "./pages/Home";
 import banner from "./assets/images/banner.jpg";
+import About from "./pages/About";
 
 function Layout({ children }) {
   const location = useLocation();
@@ -58,6 +59,14 @@ export default function App() {
           element={
             <Layout>
               <Prediction />
+            </Layout>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <Layout>
+              <About />
             </Layout>
           }
         />

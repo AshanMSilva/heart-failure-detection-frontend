@@ -18,29 +18,20 @@ export default function OurWork() {
           <Image src={piechart} className="fit-image" rounded />
         </Col>
         <Col sm={6} lg={8}>
-          <h3>Our Work</h3>
+          <h3>🩺 Our Work</h3>
           <p>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using 'Content here, content
-            here', making it look like readable English. Many desktop publishing
-            packages and web page editors now use Lorem Ipsum as their default
-            model text, and a search for 'lorem ipsum' will uncover many web
-            sites still in their infancy.
+            Our project focuses on using artificial intelligence to detect early
+            signs of heart failure from 12-lead ECG signals. By leveraging the
+            large PTB-XL clinical ECG dataset, we developed an AI-assisted
+            diagnostic system capable of identifying abnormal cardiac patterns
+            linked to early heart failure.
           </p>
           <p>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using 'Content here, content
-            here', making it look like readable English. Many desktop publishing
-            packages and web page editors now use Lorem Ipsum as their default
-            model text, and a search for 'lorem ipsum' will uncover many web
-            sites still in their infancy. here', making it look like readable
-            English. Many desktop publishing packages and web page editors now
-            use Lorem Ipsum as their default model text, and a search for 'lorem
-            ipsum' will uncover many web sites still in their infancy.
+            Our approach combines deep learning with traditional machine
+            learning to build a hybrid model that is both accurate and
+            interpretable. This system can process ECG recordings in real-time,
+            helping clinicians make quicker and more reliable decisions,
+            especially in resource-limited settings.
           </p>
         </Col>
         <Col sm={3} lg={2}>

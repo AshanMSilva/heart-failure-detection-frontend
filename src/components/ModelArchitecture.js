@@ -6,29 +6,34 @@ export default function ModelArchitecture() {
     <Container className="mt-3 mb-3">
       <Row>
         <Col md={6}>
-          <h3>Model Architecture</h3>
+          <h3>🧠 Model Architecture</h3>
           <p>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using 'Content here, content
-            here', making it look like readable English. Many desktop publishing
-            packages and web page editors now use Lorem Ipsum as their default
-            model text, and a search for 'lorem ipsum' will uncover many web
-            sites still in their infancy.
+            The system follows a <strong>hybrid AI architecture</strong>{" "}
+            consisting of two main components:
           </p>
+          <ul>
+            <li>
+              <strong>CNN Feature Extraction</strong> – A Convolutional Neural
+              Network (CNN) processes the 12-lead ECG signals and learns key
+              temporal and spatial patterns.
+            </li>
+            <li>
+              <strong>Traditional ML Classification</strong> – The features
+              extracted from the CNN are combined with patient demographic data
+              (age and gender) and passed into machine learning classifiers such
+              as Random Forest, SVM, Logistic Regression, and XGBoost to
+              generate the final prediction.
+            </li>
+          </ul>
           <p>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using 'Content here, content
-            here', making it look like readable English. Many desktop publishing
-            packages and web page editors now use Lorem Ipsum as their default
-            model text, and a search for 'lorem ipsum' will uncover many web
-            sites still in their infancy. here', making it look like readable
-            English. Many desktop publishing packages and web page editors now
-            use Lorem Ipsum as their default model text, and a search for 'lorem
-            ipsum' will uncover many web sites still in their infancy.
+            Among all configurations, the{" "}
+            <strong>
+              1D CNN with 128 extracted features combined with a Random Forest
+              classifier
+            </strong>{" "}
+            achieved the best balance of accuracy, precision, and recall. This
+            architecture enables both high performance and interpretability,
+            making it practical for real-world medical use.
           </p>
         </Col>
         <Col md={6}>

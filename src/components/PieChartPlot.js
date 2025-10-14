@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
 import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 
 export default function PieChartPlot() {
