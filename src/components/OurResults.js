@@ -92,7 +92,7 @@ export default function OurResults() {
                   activeBar={<Rectangle fill="#FBBF24" stroke="#B45309" />}
                 />
                 <Bar
-                  name="1D CNN + Random Forest"
+                  name="2D CNN + Random Forest"
                   barSize={50}
                   dataKey="2d_value"
                   fill="#10B981"
