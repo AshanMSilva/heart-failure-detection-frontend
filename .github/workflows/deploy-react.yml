@@ -3,7 +3,7 @@ name: Deploy React to S3
 on:
   push:
     branches:
-      - main   # triggers on push to main branch
+      - master   # triggers on push to master branch
 
 jobs:
   deploy:
