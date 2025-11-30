@@ -9,7 +9,7 @@ import {
 
 // API call
 function postPredictionAPI(formData) {
-  return axios.post("http://localhost:8000/api/hfprediction/", formData, {
+  return axios.post("http://13.236.146.253/api/hfprediction/", formData, {
     headers: { "Content-Type": "multipart/form-data" },
   });
 }
@@ -23,7 +23,6 @@ function* fetchPrediction(action) {
     toastId = toast.loading("Processing prediction...");
     const response = yield call(postPredictionAPI, submitData);
     yield put(predictionSuccess(response.data));
-    console.log(response);
     toast.dismiss(toastId);
     toast.success("Prediction completed!");
     navigate("/prediction");
